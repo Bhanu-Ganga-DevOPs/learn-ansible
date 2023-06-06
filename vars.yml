@@ -1,0 +1,22 @@
+- name: Demo on play level variables
+  hosts: all
+  vars:
+    Name: ANSIBLE-BOB
+  tasks:
+    - name: Print name
+      ansible.builtin.debug:
+        msg: My name is - {{ Name }}
+    - name: Print name in another task
+      ansible.builtin.debug:
+        msg: My name is - {{ Name }} - from another task - Play level
+
+
+- name: Demo on task level variables
+  hosts: all
+
+  tasks:
+    - name: Print name
+      vars:
+        Name: ANSIBLE-BOB
+      ansible.builtin.debug:
+        msg: My name is - {{ Name }} - task level
