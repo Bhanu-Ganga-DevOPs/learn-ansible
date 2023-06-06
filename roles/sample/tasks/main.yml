@@ -1,0 +1,4 @@
+- name: Prn=int hello world
+  hosts: all
+  ansible.builtin.debug:
+    msg: Hello world from roles
